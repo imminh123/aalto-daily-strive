@@ -8,6 +8,7 @@
     "start-all": "lerna run start"
   },
   "devDependencies": {
+    "daisyui": "^3.9.3",
     "husky": "^8.0.3",
     "lerna": "^7.3.1"
   }

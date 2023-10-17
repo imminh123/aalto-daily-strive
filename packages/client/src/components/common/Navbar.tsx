@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import HomeIcon from "../assets/icons/home.svg";
-import MenuIcon from "../assets/icons/menu.svg";
-import PlusIcon from "../assets/icons/plus.svg";
-import TrophyIcon from "../assets/icons/trophy.svg";
-import SettingsIcon from "../assets/icons/settings.svg";
+import HomeIcon from "../../assets/icons/home.svg";
+import MenuIcon from "../../assets/icons/menu.svg";
+import PlusIcon from "../../assets/icons/plus.svg";
+import TrophyIcon from "../../assets/icons/trophy.svg";
+import SettingsIcon from "../../assets/icons/settings.svg";
 
 const PlusButton = () => {
   return (
