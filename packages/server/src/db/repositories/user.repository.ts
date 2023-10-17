@@ -26,6 +26,11 @@ export class UserRepository {
     return this.model.findById(id).exec();
   }
 
+  // find a User by email
+  async findByEmail(email: string): Promise<IUser | null> {
+    return this.model.findOne({ email }).exec();
+  }
+
   // find a User by username
   async findByUsername(username: string): Promise<IUser | null> {
     return this.model.findOne({ username }).exec();
@@ -37,7 +42,7 @@ export class UserRepository {
   }
 
   // delete a User
-  async delete(id: string): Promise<IUser | null> {
+  async delete(id: String): Promise<IUser | null> {
     return this.model.findByIdAndDelete(id).exec();
   }
 }

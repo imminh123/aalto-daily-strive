@@ -2,7 +2,7 @@ import React from "react";
 
 export const TaskItem = ({title, streak}: {title: string, streak: number}) => {
   return (
-    <div className="flex items-center mb-3">
+    <li className="flex items-center mb-3">
       <div className="form-control">
         <label className="label cursor-pointer">
           <input
@@ -16,6 +16,6 @@ export const TaskItem = ({title, streak}: {title: string, streak: number}) => {
         <span className="label-text font-medium">{title}</span>
         <p className="label-text text-gray-500">{streak}-day streak</p>
       </div>
-    </div>
+    </li>
   );
 };

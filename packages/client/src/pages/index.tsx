@@ -39,6 +39,18 @@ export default function Home() {
       name: "Learn Spanish",
       streak: 2,
     },
+    {
+      name: "Go for a morning run",
+      streak: 2,
+    },
+    {
+      name: "Practice coding",
+      streak: 2,
+    },
+    {
+      name: "Learn Spanish",
+      streak: 2,
+    },
   ];
 
   useEffect(() => {
@@ -59,7 +71,7 @@ export default function Home() {
           </h1>
           <Search />
 
-          <div className="mt-3">
+          <div className="mt-5">
             <div className="carousel w-full">
               <div id="item1" className="carousel-item w-full">
                 <HabitCard />
@@ -86,7 +98,7 @@ export default function Home() {
 
         <section
           style={{ height: "calc(58vh)" }}
-          className="bg-softTeal h-screen rounded-t-3xl p-4"
+          className="bg-softTeal h-screen rounded-t-3xl p-4 overflow-hidden"
         >
           <div className="flex justify-between items-center">
             <span className="text-sm font-light">
@@ -100,14 +112,14 @@ export default function Home() {
             max="100"
           ></progress>
 
-          <div className="mt-3">
+          <div className="mt-3 overflow-y-auto h-full" >
             {data.map((item) => (
               <TaskItem
                 key={item.name}
                 streak={item.streak}
                 title={item.name}
               />
-            ))}
+            ))} 
           </div>
         </section>
 
