@@ -9,22 +9,6 @@ import { TopicController } from "@/components/topic/controller";
 import { TaskController } from "@/components/task/controlller";
 
 export const appRouter = t.router({
-  sayHi: t.procedure.query(() => {
-    return "Hi";
-  }),
-  log: t.procedure
-    .input((v) => {
-      if (typeof v === "string") return v;
-      throw new Error("Invalid input");
-    })
-    .mutation((req) => {
-      console.log(req.input);
-      return true;
-    }),
-  secretData: adminProcedure.query(({ ctx }) => {
-    console.log(ctx.user);
-    return "Super secret";
-  }),
   user: userRouter,
 });
 
@@ -41,7 +25,8 @@ router.get(
   sanitizer(appKeyValidator),
   UserController.getUsers,
 );
-router.post("/users", sanitizer(appKeyValidator), UserController.createUser);
+
+router.post("/register", sanitizer(appKeyValidator), UserController.createUser);
 router.post("/signin", sanitizer(appKeyValidator), UserController.signInUser);
 router.delete(
   "/signout",

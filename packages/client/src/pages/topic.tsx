@@ -7,8 +7,11 @@ import Productivity from '../assets/images/productivity.png'
 import Sleep from '../assets/images/sleep.png'
 import Head from "next/head";
 import React from "react";
+import { useGetListTopic } from "@/features/tasks/api/getListTopic";
 
 const TopicPage = () => {
+  const {data: topics} = useGetListTopic()
+
   const data = [
     {
       name: "Staying fit",
