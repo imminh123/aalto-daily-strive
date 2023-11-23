@@ -130,18 +130,9 @@ router.put(
   UserTaskController.updateUserTask,
 );
 
-
 //Logs
-router.get(
-  "/logs",
-  sanitizer(appKeyValidator),
-  LogController.getLogs,
-);
+router.get("/logs", sanitizer(appKeyValidator), LogController.getLogs);
 
-router.post(
-  "/logs",
-  sanitizer(appKeyValidator),
-  LogController.createLog,
-);
+router.post("/logs", sanitizer(appKeyValidator), LogController.createLog);
 
 export default router;

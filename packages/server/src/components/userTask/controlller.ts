@@ -149,7 +149,8 @@ export class UserTaskController {
       const userTaskServices = new UserTaskServices();
       const logServices = new LogServices();
 
-      const userTaskToBeUpdated =await userTaskServices.getUserTask(userTaskId); 
+      const userTaskToBeUpdated =
+        await userTaskServices.getUserTask(userTaskId);
       if (userTaskToBeUpdated) {
         userTaskToBeUpdated.completed = !userTaskToBeUpdated?.completed;
         const result = await userTaskServices.updateUserTask(
@@ -157,18 +158,17 @@ export class UserTaskController {
           userTaskToBeUpdated,
         );
         const userTask = await userTaskServices.getUserTask(userTaskId);
-  
-        const { ObjectId } = require('mongodb');
-      if(userTask){
-        const newLog: ILog = {
-          user: userTask.user, 
-          task:  new ObjectId(userTaskId), 
-          completed: userTaskToBeUpdated?.completed
-        }; 
-        logServices.createLog(newLog);
-      }
+
+        const { ObjectId } = require("mongodb");
+        if (userTask) {
+          const newLog: ILog = {
+            user: userTask.user,
+            task: new ObjectId(userTaskId),
+            completed: userTaskToBeUpdated?.completed,
+          };
+          logServices.createLog(newLog);
+        }
         res.status(OK).json(apiResponse(result));
-      
       }
     } catch (error) {
       console.log("something went wrong updating");
