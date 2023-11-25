@@ -1,4 +1,3 @@
-import { SignUpInput } from "@/pages/signup";
 import { api } from "@/utils/axios";
 import { useQuery } from "react-query";
 

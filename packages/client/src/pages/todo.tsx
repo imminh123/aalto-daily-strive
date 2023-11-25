@@ -59,7 +59,7 @@ const TodoPage = () => {
           className="bg-softTeal h-screen rounded-t-3xl p-4 overflow-hidden"
         >
           <ul className="mt-3 overflow-y-auto h-full" >
-            {listTask && listTask.data.map((item) => (
+            {listTask?.data.map((item: any) => (
               <TaskItem
                 key={item.name}
                 streak={0}

@@ -1,14 +1,14 @@
-import { Router } from "express";
-import { adminProcedure, t } from "../trpc";
 import { HomeController, appKeyValidator } from "@/components/home";
+import { LogController } from "@/components/log/controller";
+import { TaskController } from "@/components/task/controlller";
+import { TopicController } from "@/components/topic/controller";
 import { UserController } from "@/components/user/controller";
+import { UserTaskController } from "@/components/userTask/controlller";
 import { sanitizer } from "@/helpers";
 import { signInCheck } from "@/middlewares/signInCheck";
+import { Router } from "express";
+import { t } from "../trpc";
 import { userRouter } from "./user";
-import { TopicController } from "@/components/topic/controller";
-import { TaskController } from "@/components/task/controlller";
-import { UserTaskController } from "@/components/userTask/controlller";
-import { LogController } from "@/components/log/controller";
 
 export const appRouter = t.router({
   user: userRouter,
@@ -121,10 +121,6 @@ router.get(
   UserTaskController.completeUserTask,
 );
 
-router.post(
-  "/logs",
-  sanitizer(appKeyValidator),
-  LogController.createLog,
-);
+router.post("/logs", sanitizer(appKeyValidator), LogController.createLog);
 
 export default router;

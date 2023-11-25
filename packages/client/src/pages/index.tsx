@@ -1,7 +1,5 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
-import { api } from "@/utils/api";
-import { useEffect } from "react";
 import { Navbar } from "@/components/common/Navbar";
 import { Header } from "@/components/common/Header";
 import { Search } from "@/components/common/Search";
@@ -69,7 +67,7 @@ export default function Home() {
           ></progress>
 
           <div className="mt-3 overflow-y-auto h-full" >
-            {listTask && listTask.data.map((item) => (
+            {listTask && listTask.data.map((item: any) => (
               <TaskItem
                 key={item.id}
                 streak={0}
