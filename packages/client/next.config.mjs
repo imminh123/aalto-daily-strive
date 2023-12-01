@@ -14,7 +14,7 @@ const withPWA = WithPWA({
   register: true,
   skipWaiting: false,
 });
-const config = withPWA({
+const config = {
   reactStrictMode: true,
 
   /**
@@ -22,9 +22,9 @@ const config = withPWA({
    *
    * @see https://github.com/vercel/next.js/issues/41980
    */
-  eslint: { 
-    ignoreDuringBuilds: true, 
-  }, 
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
@@ -32,13 +32,13 @@ const config = withPWA({
   images: {
     remotePatterns: [
       {
-        hostname: 'i.ibb.co',
+        hostname: "i.ibb.co",
       },
       {
-        hostname: 'ibb.co',
+        hostname: "ibb.co",
       },
     ],
   },
-});
+};
 
 export default config;
