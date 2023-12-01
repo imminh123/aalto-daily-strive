@@ -7,13 +7,6 @@ await import("./src/env.mjs");
 /** @type {import("next").NextConfig} */
 
 // @ts-ignore
-import WithPWA from "next-pwa";
-const withPWA = WithPWA({
-  disable: process.env.NODE_ENV === "development",
-  dest: "public",
-  register: true,
-  skipWaiting: false,
-});
 const config = {
   reactStrictMode: true,
 
